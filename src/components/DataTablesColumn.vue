@@ -196,9 +196,15 @@ export default {
                   }
                 },
                 on: {
+                  input: value => {
+                    if (value !== undefined) {
+                      this.$emit('input', value)
+                    }
+                  },
                   blur: event => {
-                    this.$emit('input', event.target.value)
-                    this.callback && this.callback(this.prop, event.target.value)
+                    let value = event.target.value !== undefined ? event.target.value : this.value
+                    this.$emit('input', value)
+                    this.callback && this.callback(this.prop, value)
                   }
                 }
               }),
@@ -310,7 +316,7 @@ export default {
                   placeholder: this.placeholder,
                   value: this.value,
                   type: 'daterange',
-                  rangeSeparator: 'To', // 至
+                  rangeSeparator: '—', // 至
                   startPlaceholder: 'Start date', // 开始日期
                   endPlaceholder: 'End date', //  结束日期
                   format: this.dateFormat,
