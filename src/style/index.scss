@@ -9,4 +9,14 @@
       margin-left: 10px;
     }
   }
+
+  .data-tables-column {
+    .el-table__column-filter-trigger {
+      display: none;
+    }
+  }
+
+  .el-table__column-filter-popover {
+    display: inline-flex;
+  }
 }
