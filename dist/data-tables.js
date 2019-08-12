@@ -4221,12 +4221,12 @@ var DataTablesServer_component = normalizeComponent(
 )
 
 /* harmony default export */ var DataTablesServer = (DataTablesServer_component.exports);
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/components/DataTablesColumn.vue?vue&type=template&id=71ab916b
-var DataTablesColumnvue_type_template_id_71ab916b_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.visible)?_c('el-table-column',{attrs:{"prop":_vm.prop,"label":_vm.label,"width":_vm.width,"min-width":_vm.minWidth,"fixed":_vm.fixed,"sortable":_vm.sortable,"sort-method":_vm.sortMethod,"sort-by":_vm.sortBy,"sort-orders":_vm.sortOrders,"resizable":_vm.resizable,"formatter":_vm.formatter,"align":_vm.align,"header-align":_vm.headerAlign,"render-header":_vm.renderHeader,"class-name":_vm.getClassName,"label-class-name":_vm.headerHighlight,"filters":[]},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._t("default",[_c('span',[_vm._v(_vm._s(_vm.formatMethod(scope.row[_vm.prop])))])],{row:scope.row,$index:scope.$index})]}}])}):_vm._e()}
-var DataTablesColumnvue_type_template_id_71ab916b_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/components/DataTablesColumn.vue?vue&type=template&id=0d72b286
+var DataTablesColumnvue_type_template_id_0d72b286_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.visible)?_c('el-table-column',{attrs:{"prop":_vm.prop,"label":_vm.label,"width":_vm.width,"min-width":_vm.minWidth,"fixed":_vm.fixed,"sortable":_vm.sortable,"sort-method":_vm.sortMethod,"sort-by":_vm.sortBy,"sort-orders":_vm.sortOrders,"resizable":_vm.resizable,"formatter":_vm.formatter,"align":_vm.align,"header-align":_vm.headerAlign,"render-header":_vm.renderHeader,"class-name":_vm.getClassName,"label-class-name":_vm.headerHighlight,"filters":[]},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._t("default",[_c('span',[_vm._v(_vm._s(_vm.formatMethod(scope.row[_vm.prop])))])],{row:scope.row,$index:scope.$index})]}}])}):_vm._e()}
+var DataTablesColumnvue_type_template_id_0d72b286_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/DataTablesColumn.vue?vue&type=template&id=71ab916b
+// CONCATENATED MODULE: ./src/components/DataTablesColumn.vue?vue&type=template&id=0d72b286
 
 // EXTERNAL MODULE: ./node_modules/lodash/isEmpty.js
 var isEmpty = __webpack_require__("E+oP");
@@ -4456,9 +4456,15 @@ var isEmpty_default = /*#__PURE__*/__webpack_require__.n(isEmpty);
           }
         },
         on: {
+          input: function input(value) {
+            if (value !== undefined) {
+              _this.$emit('input', value);
+            }
+          },
           blur: function blur(event) {
-            _this.$emit('input', event.target.value);
-            _this.callback && _this.callback(_this.prop, event.target.value);
+            var value = event.target.value !== undefined ? event.target.value : _this.value;
+            _this.$emit('input', value);
+            _this.callback && _this.callback(_this.prop, value);
           }
         }
       }), createElement('span', {
@@ -4534,7 +4540,7 @@ var isEmpty_default = /*#__PURE__*/__webpack_require__.n(isEmpty);
           placeholder: this.placeholder,
           value: this.value,
           type: 'daterange',
-          rangeSeparator: 'To', // 至
+          rangeSeparator: '—', // 至
           startPlaceholder: 'Start date', // 开始日期
           endPlaceholder: 'End date', //  结束日期
           format: this.dateFormat,
@@ -4634,8 +4640,8 @@ var isEmpty_default = /*#__PURE__*/__webpack_require__.n(isEmpty);
 
 var DataTablesColumn_component = normalizeComponent(
   components_DataTablesColumnvue_type_script_lang_js,
-  DataTablesColumnvue_type_template_id_71ab916b_render,
-  DataTablesColumnvue_type_template_id_71ab916b_staticRenderFns,
+  DataTablesColumnvue_type_template_id_0d72b286_render,
+  DataTablesColumnvue_type_template_id_0d72b286_staticRenderFns,
   false,
   null,
   null,
